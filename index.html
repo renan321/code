@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="scc.css" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <center></center>
+    </div>
+
+    <div class="card-wrapper"></div>
+
+    <script src="jquery.card.js"></script>
+    <form>
+      <input type="text" name="number" />
+      <input type="text" name="name" />
+      <input type="text" name="expiry" />
+      <input type="text" name="cvc" />
+    </form>
+    <script>
+      var card = new Card({
+        form: "form",
+        container: ".card-wrapper",
+
+        messages: {
+          validDate: "expire\ndate",
+          monthYear: "mm/yy"
+        }
+      });
+      var card = new Card({
+        // a selector or DOM element for the form where users will
+        // be entering their information
+        form: "form", // *required*
+        // a selector or DOM element for the container
+        // where you want the card to appear
+        container: ".card-wrapper", // *required*
+
+        formSelectors: {
+          numberInput: "input#number", // optional — default input[name="number"]
+          expiryInput: "input#expiry", // optional — default input[name="expiry"]
+          cvcInput: "input#cvc", // optional — default input[name="cvc"]
+          nameInput: "input#name" // optional - defaults input[name="name"]
+        },
+
+        width: 200, // optional — default 350px
+        formatting: true, // optional - default true
+
+        // Strings for translation - optional
+        messages: {
+          validDate: "valid\ndate", // optional - default 'valid\nthru'
+          monthYear: "mm/yyyy" // optional - default 'month/year'
+        },
+
+        // Default placeholders for rendered fields - optional
+        placeholders: {
+          number: "•••• •••• •••• ••••",
+          name: "Full Name",
+          expiry: "••/••",
+          cvc: "•••"
+        },
+
+        masks: {
+          cardNumber: "•" // optional - mask card number
+        },
+
+        // if true, will log helpful messages for setting up Card
+        debug: false // optional - default false
+      });
+      new Card({ form: "form", container: ".card" });
+
+      Ember.libraries.register("Ember Credit Card", "2.13.0");
+    </script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/card/2.5.0/card.min.js"
+      integrity="sha512-gU27kLkXwPNl9tQl3qwD7qv3L4DR7PDf4TkpLYXpF8v6meGMRMNDL9tHuWUIjrdG+ff83QXAM8gFnRX4peq6AQ=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/card/2.5.0/card.js"
+      integrity="sha512-THQfnYiuHxoV6EeXKBOR0CUZPaL1d5P2zMEu5atdb8tWnuE6a0wFcDQlNYRrpfIUGowJ4mq3jGUEybBhSal0WQ=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/card/2.5.0/jquery.card.js"
+      integrity="sha512-Ag5wABuji5LV8dJvLhKtmx+a7NoNwOJR3o652RP6qdNnr1N5V0ArgWK4VmFhQ5YkM2RER0bQiw7hhMIbeEnLBw=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/card/2.5.0/jquery.card.min.js"
+      integrity="sha512-YH9A3v47SmVpIxVU/xDVf90D8ruoV4o8m2JU3WvAbbTtnlF2jv80aNst2WhPnyPgjFaztpVXavmippJQNL1Tsg=="
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="card.js"></script>
+
+    <form action="https://www.homehost.com.br/blog/tutoriais/html-buttton/">
+      <button class="learn-more">paga</button>
+    </form>
+  </body>
+</html>
